@@ -1,7 +1,7 @@
 import streamlit as st
 import requests
 
-API_KEY = "sk-a026517790ea45039be88ee66aa07966"
+API_KEY = st.secrets["API_KEY"]
 
 st.title("AI 学习总结助手")
 st.write("每天记录学习内容，AI 帮你写总结")
