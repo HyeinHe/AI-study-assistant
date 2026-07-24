@@ -25,7 +25,7 @@ if st.button("生成总结"):
                 "Content-Type": "application/json"
             }
             data = {
-                "model": "deepseek-chat",
+                "model": "deepseek-v4-flash",
                 "messages": [{"role": "user", "content": prompt}]
             }
 
