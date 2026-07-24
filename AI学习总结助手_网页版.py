@@ -29,18 +29,9 @@ if st.button("生成总结"):
                 "messages": [{"role": "user", "content": prompt}]
             }
 
-            response = requests.post(url, headers=headers, json=data)
+                      response = requests.post(url, headers=headers, json=data)
             result = response.json()
-
-            # 调试：看看 API 返回了什么
-            st.write("状态码：", response.status_code)
-            st.write("API 返回：")
-            st.json(result)
-
-            if "choices" not in result:
-                st.error("API 返回了错误，检查 Key 是否正确")
-                st.stop()
-
             reply = result["choices"][0]["message"]["content"]
+           
             st.success("总结完成！")
             st.markdown(reply)
