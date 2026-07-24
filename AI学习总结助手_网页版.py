@@ -29,9 +29,9 @@ if st.button("生成总结"):
                 "messages": [{"role": "user", "content": prompt}]
             }
 
-                      response = requests.post(url, headers=headers, json=data)
+            response = requests.post(url, headers=headers, json=data)
             result = response.json()
             reply = result["choices"][0]["message"]["content"]
-           
+
             st.success("总结完成！")
             st.markdown(reply)
